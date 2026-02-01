@@ -14,11 +14,12 @@ Em Java, assim como na maioria das linguagens de programação, existem os tipos
    - [float](#float)
    - [double](#double)
 2. [Tabela Resumida dos Tipos Primitivos](#2-tabela-resumida-dos-tipos-primitivos)
-3. [Casting (Conversão de Tipos)](#3-casting-conversão-de-tipos)
+3. [Wrapper Classes (Referência)](#3-wrapper-classes-referência)
+4. [Casting (Conversão de Tipos)](#4-casting-conversão-de-tipos)
    - [Casting Implícito](#casting-implícito)
    - [Casting Explícito](#casting-explícito)
    - [Tabela de Conversões](#tabela-de-conversões)
-4. [Diferenças entre Tipos Primitivos Java e TypeScript/JavaScript](#4-diferenças-entre-tipos-primitivos-java-e-typescriptjavascript)
+5. [Diferenças entre Tipos Primitivos Java e TypeScript/JavaScript](#5-diferenças-entre-tipos-primitivos-java-e-typescriptjavascript)
 
 ---
 
@@ -136,7 +137,37 @@ double distancia = 384400.5;
 
 ---
 
-## 3. Casting (Conversão de Tipos)
+## 3. Wrapper Classes (Referência)
+
+Cada tipo primitivo tem uma **classe equivalente** chamada Wrapper Class. São necessárias para usar tipos primitivos em Generics (`List<T>`, `Map<K,V>`, etc.).
+
+| Primitivo | Wrapper |
+|-----------|---------|
+| `boolean` | `Boolean` |
+| `byte` | `Byte` |
+| `char` | `Character` |
+| `short` | `Short` |
+| `int` | `Integer` |
+| `long` | `Long` |
+| `float` | `Float` |
+| `double` | `Double` |
+
+**Por que existem?**
+- Generics não aceitam primitivos: `List<int>` ❌ → `List<Integer>` ✅
+- Permitem valores `null`
+- Possuem métodos utilitários
+
+```java
+List<Integer> numeros = new ArrayList<>();  // OK
+numeros.add(10);  // autoboxing: int → Integer
+int valor = numeros.get(0);  // unboxing: Integer → int
+```
+
+> 📄 **Documentação completa:** Veja [wrapper-classes.md](wrapper-classes.md) para detalhes sobre autoboxing, métodos utilitários e boas práticas.
+
+---
+
+## 4. Casting (Conversão de Tipos)
 
 Casting é um recurso utilizado em Java para converter um tipo de dado em outro. Essa conversão pode ser feita de forma automática pelo compilador (**conversão implícita**), quando o tipo de dado de destino é compatível com o tipo de dado de origem, ou de forma manual (**conversão explícita**), utilizando o operador de casting.
 
@@ -218,7 +249,7 @@ byte → short → int → long → float → double
 
 ---
 
-## 4. Diferenças entre Tipos Primitivos Java e TypeScript/JavaScript
+## 5. Diferenças entre Tipos Primitivos Java e TypeScript/JavaScript
 
 Se você está familiarizado com TypeScript/JavaScript, existem diferenças importantes nos tipos primitivos:
 
