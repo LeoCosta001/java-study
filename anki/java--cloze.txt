@@ -1,0 +1,65 @@
+#separator:tab
+#html:true
+#notetype:Omissão de palavras
+#tags column:2
+Literais <code>long</code> em Java precisam do sufixo {{c1::<code>L</code>}}: <code>long x = 1000{{c1::L}};</code>	java::tipos-primitivos
+Literais <code>float</code> em Java precisam do sufixo {{c1::<code>f</code>}}: <code>float x = 3.14{{c1::f}};</code>	java::tipos-primitivos
+A ordem de conversão implícita em Java é: <code>byte → short → {{c1::int}} → {{c2::long}} → {{c3::float}} → {{c4::double}}</code>	java::tipos-primitivos
+Para converter <code>double</code> em <code>int</code> manualmente: <code>int y = {{c1::(int)}} x;</code>	java::tipos-primitivos
+O wrapper de <code>int</code> é {{c1::<code>Integer</code>}} e o de <code>char</code> é {{c1::<code>Character</code>}}	java::wrapper-classes
+Para converter String em int: <code>int n = {{c1::Integer.parseInt}}("42");</code>	java::wrapper-classes
+Para converter String em double: <code>double d = {{c1::Double.parseDouble}}("3.14");</code>	java::wrapper-classes
+Para comparar Wrappers com segurança, use {{c1::<code>.equals()</code>}} ao invés de <code>==</code>	java::wrapper-classes
+Criar ArrayList: <code>{{c1::List}}&lt;String&gt; nomes = new {{c2::ArrayList}}&lt;&gt;();</code>	java::lists
+Adicionar ao final da lista: <code>nomes.{{c1::add}}("Ana");</code>	java::lists
+Acessar por índice: <code>String nome = nomes.{{c1::get}}(0);</code>	java::lists
+Tamanho da lista: <code>int tam = nomes.{{c1::size}}();</code>	java::lists
+Verificar se contém: <code>boolean existe = nomes.{{c1::contains}}("Ana");</code>	java::lists
+Lista imutável: <code>List&lt;String&gt; fixa = {{c1::List.of}}("A", "B", "C");</code>	java::lists
+Criar HashMap: <code>{{c1::Map}}&lt;String, Integer&gt; mapa = new {{c2::HashMap}}&lt;&gt;();</code>	java::maps
+Adicionar ao Map: <code>mapa.{{c1::put}}("chave", 42);</code>	java::maps
+Obter valor do Map: <code>int v = mapa.{{c1::get}}("chave");</code>	java::maps
+Obter valor com padrão: <code>int v = mapa.{{c1::getOrDefault}}("chave", 0);</code>	java::maps
+Iterar pares do Map: <code>for (Map.{{c1::Entry}}&lt;K,V&gt; e : mapa.{{c2::entrySet}}()) { }</code>	java::maps
+Em POO, {{c1::encapsulamento}} é o princípio de esconder detalhes internos e expor apenas o necessário	java::poo
+Em POO, {{c1::polimorfismo}} permite tratar objetos de diferentes classes de forma uniforme	java::poo
+Para herdar de uma classe: <code>public class Filho {{c1::extends}} Pai { }</code>	java::poo
+Para implementar uma interface: <code>public class MinhaClasse {{c1::implements}} MinhaInterface { }</code>	java::poo
+Chamar construtor da classe pai: <code>{{c1::super}}(parametros);</code>	java::poo
+O modificador {{c1::<code>private</code>}} permite acesso apenas dentro da própria classe	java::poo
+O modificador {{c1::<code>protected</code>}} permite acesso no pacote e em subclasses	java::poo
+Para definir uma classe que não pode ser instanciada: <code>public {{c1::abstract}} class MinhaClasse { }</code>	java::poo
+Getter para boolean usa <code>{{c1::is}}</code> ao invés de <code>get</code>: <code>public boolean {{c1::is}}Ativo() { }</code>	java::poo
+Iniciar um Stream: <code>lista.{{c1::stream}}()</code>	java::streams
+Filtrar em Stream: <code>.{{c1::filter}}(n -&gt; n &gt; 5)</code>	java::streams
+Transformar em Stream: <code>.{{c1::map}}(n -&gt; n * 2)</code>	java::streams
+Ordenar em Stream: <code>.{{c1::sorted}}()</code>	java::streams
+Coletar Stream para List: <code>.{{c1::collect}}(Collectors.{{c2::toList}}())</code> ou <code>.{{c1::toList}}()</code> no Java 16+	java::streams
+Contar elementos do Stream: <code>.{{c1::count}}()</code>	java::streams
+Reduzir Stream a um valor: <code>.{{c1::reduce}}(0, (acc, n) -&gt; acc + n)</code>	java::streams
+Limitar a N elementos: <code>.{{c1::limit}}(5)</code>	java::streams
+Pular N elementos: <code>.{{c1::skip}}(3)</code>	java::streams
+Remover duplicados do Stream: <code>.{{c1::distinct}}()</code>	java::streams
+Concatenar strings com Stream: <code>.collect(Collectors.{{c1::joining}}(", "))</code>	java::streams
+Agrupar por propriedade: <code>.collect(Collectors.{{c1::groupingBy}}(Filme::getCategoria))</code>	java::streams
+Ordenar por propriedade decrescente: <code>.sorted(Comparator.comparing(Filme::getNota).{{c1::reversed}}())</code>	java::streams
+O operador lambda em Java é {{c1::<code>-&gt;</code>}}, equivalente ao <code>=&gt;</code> do TypeScript	java::lambdas
+Lambda com 0 parâmetros: <code>{{c1::()}} -&gt; System.out.println("Olá")</code>	java::lambdas
+Lambda com múltiplos parâmetros: <code>{{c1::(a, b)}} -&gt; a + b</code>	java::lambdas
+<code>{{c1::Predicate}}&lt;T&gt;</code> é a interface funcional que recebe T e retorna boolean	java::lambdas
+<code>{{c1::Consumer}}&lt;T&gt;</code> é a interface funcional que recebe T e retorna void	java::lambdas
+<code>{{c1::Function}}&lt;T, R&gt;</code> é a interface funcional que recebe T e retorna R	java::lambdas
+<code>{{c1::Supplier}}&lt;T&gt;</code> é a interface funcional que não recebe nada e retorna T	java::lambdas
+Method reference para método estático: <code>{{c1::Math::abs}}</code> (equivale a <code>n -&gt; Math.abs(n)</code>)	java::lambdas
+Method reference para construtor: <code>{{c1::ArrayList::new}}</code> (equivale a <code>() -&gt; new ArrayList&lt;&gt;()</code>)	java::lambdas
+Method reference para println: <code>{{c1::System.out::println}}</code>	java::lambdas
+Declarar pacote: <code>{{c1::package}} com.empresa.projeto;</code>	java::imports
+Import estático: <code>import {{c1::static}} java.lang.Math.PI;</code>	java::imports
+Import wildcard: <code>import java.util.{{c1::*}};</code>	java::imports
+Criar HttpClient: <code>HttpClient client = HttpClient.{{c1::newHttpClient}}();</code>	java::http
+Criar request HTTP: <code>HttpRequest.{{c1::newBuilder}}().uri(URI.create(url)).build();</code>	java::http
+Enviar request: <code>client.{{c1::send}}(request, HttpResponse.BodyHandlers.ofString());</code>	java::http
+Obter status da resposta: <code>response.{{c1::statusCode}}()</code>	java::http
+Obter body da resposta: <code>response.{{c1::body}}()</code>	java::http
+Exponenciação em Java usa <code>{{c1::Math.pow}}(2, 3)</code> enquanto TypeScript usa <code>2 ** 3</code>	java::operadores
+<code>instanceof</code> em Java é equivalente ao <code>{{c1::typeof}}</code> do JavaScript para verificar tipos	java::operadores
