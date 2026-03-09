@@ -43,5 +43,6 @@ Adquirir conhecimento sobre a linguagem Java, principais conceitos e stack usada
 | [streams.md](./streams.md) | API de Streams (filter, map, reduce) |
 | [lambdas.md](./lambdas.md) | Lambdas e interfaces funcionais |
 | [imports.md](./imports.md) | Sistema de imports |
+| [big-o.md](./big-o.md) | Notação Big O e complexidade de operações |
 | [http-requests.md](./http-requests.md) | Requisições HTTP |
 | [vs-code-extensions.md](./vs-code-extensions.md) | Extensões recomendadas para VS Code |
