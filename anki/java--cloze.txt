@@ -63,3 +63,8 @@ Obter status da resposta: <code>response.{{c1::statusCode}}()</code>	java::http
 Obter body da resposta: <code>response.{{c1::body}}()</code>	java::http
 Exponenciação em Java usa <code>{{c1::Math.pow}}(2, 3)</code> enquanto TypeScript usa <code>2 ** 3</code>	java::operadores
 <code>instanceof</code> em Java é equivalente ao <code>{{c1::typeof}}</code> do JavaScript para verificar tipos	java::operadores
+<code>ArrayList</code> tem leitura {{c1::O(1)}} e inserção/remoção {{c2::O(n)}} porque é um array contíguo na memória	java::lists java::big-o
+<code>LinkedList</code> tem leitura {{c1::O(n)}} e inserção/remoção {{c2::O(1)}} porque é uma cadeia de nós com ponteiros	java::lists java::big-o
+{{c1::O(1)}} significa <b>tempo constante</b> — a operação não depende do tamanho dos dados	java::big-o
+{{c1::O(n)}} significa <b>tempo linear</b> — a operação cresce proporcionalmente ao tamanho dos dados	java::big-o
+{{c1::O(log n)}} significa <b>tempo logarítmico</b> — a cada passo descarta metade dos dados (ex: busca binária)	java::big-o

@@ -6,8 +6,8 @@ Cards gerados a partir das anotações de estudo. Gerenciados via Cursor AI (ski
 
 | Arquivo | Tipo | Cards | Conteúdo |
 |---------|------|-------|----------|
-| `java--basic.txt` | Pergunta/Resposta | 43 | Definições, comparações, conceitos |
-| `java--cloze.txt` | Preencher Lacuna | 61 | Sintaxe, métodos, código |
+| `java--basic.txt` | Pergunta/Resposta | 51 | Definições, comparações, conceitos |
+| `java--cloze.txt` | Preencher Lacuna | 66 | Sintaxe, métodos, código |
 
 ## Como Importar no Anki
 
@@ -54,6 +54,7 @@ Ao re-importar, o Anki detecta cards existentes e:
 - `java::imports` - Sistema de imports e packages
 - `java::http` - Requisições HTTP
 - `java::operadores` - Operadores e diferenças com TS
+- `java::big-o` - Notação Big O e complexidade
 
 ## Gerenciamento
 
